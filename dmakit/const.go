@@ -1,0 +1,34 @@
+package dmakit
+
+const (
+	D_CTRL_RELE_OFF     = 0x0
+	D_CTRL_RELE_ON      = 0x1
+	D_CTRL_MFD_OFF      = 0x0
+	D_CTRL_MFD_RES      = 0x1
+	D_CTRL_MFD_VIF      = 0x2
+	D_CTRL_MFD_GIF      = 0x3
+	D_CTRL_STS_UNSPEC   = 0x0
+	D_CTRL_STS_SIF      = 0x1
+	D_CTRL_STS_SPR      = 0x2
+	D_CTRL_STS_IPU      = 0x3
+	D_CTRL_STD_OFF      = 0x0
+	D_CTRL_STD_VIF      = 0x1
+	D_CTRL_STD_GIF      = 0x2
+	D_CTRL_STD_SIF      = 0x3
+	D_CTRL_RCYC_8       = 0x0
+	D_CTRL_RCYC_16      = 0x1
+	D_CTRL_RCYC_32      = 0x2
+	D_CTRL_RCYC_64      = 0x3
+	D_CTRL_RCYC_128     = 0x4
+	D_CTRL_RCYC_256     = 0x5
+	DMA_CHANNEL_VIF0    = 0x0
+	DMA_CHANNEL_VIF1    = 0x1
+	DMA_CHANNEL_GIF     = 0x2
+	DMA_CHANNEL_FROMIPU = 0x3
+	DMA_CHANNEL_TOIPU   = 0x4
+	DMA_CHANNEL_SIF0    = 0x5
+	DMA_CHANNEL_SIF1    = 0x6
+	DMA_CHANNEL_SIF2    = 0x7
+	DMA_CHANNEL_FROMSPR = 0x8
+	DMA_CHANNEL_TOSPR   = 0x9
+)
