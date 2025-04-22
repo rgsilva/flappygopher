@@ -37,10 +37,11 @@ func ResetAndPatchIOP() {
 
 func LoadModule(path string) {
 	cPath := C.CString(path)
-	defer C.free(unsafe.Pointer(cPath))
 
 	ret := int(C.SifLoadModule(cPath, 0, nil))
 	debug.Printf("Load module: %s, %d\n", path, ret)
+
+	C.free(unsafe.Pointer(cPath))
 }
 
 func LoadModuleBuffer(ptr unsafe.Pointer, size int) {
