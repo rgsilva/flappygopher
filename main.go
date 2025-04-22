@@ -353,7 +353,7 @@ func drawFrame() {
 	// Sync & flip (not on first frame though)
 	gskit.SyncFlip(gsGlobal)
 
-	// Flip the buffer
+	// Activate the new buffer
 	gskit.SetActive(gsGlobal)
 
 	// Clear the buffer
@@ -367,7 +367,7 @@ func drawFrame() {
 		drawGameOver()
 	}
 
-	// Draw the FPS
+	// Draw the FPS counter
 	drawFPS()
 
 	// Push the draw commands to the GS
@@ -425,12 +425,6 @@ func drawInGame() {
 		isGoingUp = false
 	}
 
-	// If we're over the screen limit, it's game over.
-	if birdY > maxY {
-		endGame()
-		return
-	}
-
 	// Move the pipes a bit.
 	for i := range pipes {
 		if pipes[i].X < -PipeBodyWidth {
@@ -443,6 +437,12 @@ func drawInGame() {
 		} else {
 			pipes[i].X = pipes[i].X - HorizontalSpeed
 		}
+	}
+
+	// If we're over the screen limit, it's game over.
+	if birdY > maxY {
+		endGame()
+		return
 	}
 
 	// Detect collision against each pipe.
