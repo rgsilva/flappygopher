@@ -5,7 +5,6 @@ package gskit
 #include <gsKit.h>
 */
 import "C"
-import "unsafe"
 
 type GSGlobal struct {
 	native *C.struct_gsGlobal
@@ -31,8 +30,4 @@ func (g *GSGlobal) toNative() *C.struct_gsGlobal {
 	g.native.PrimAlphaEnable = boolToCint(g.PrimAlphaEnable)
 	g.native.PrimAlpha = C.ulonglong(g.PrimAlpha)
 	return g.native
-}
-
-func (g *GSGlobal) Pointer() unsafe.Pointer {
-	return unsafe.Pointer(g.toNative())
 }

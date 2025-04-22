@@ -41,11 +41,6 @@ func (g *GSTexture) toNative() *C.struct_gsTexture {
 	return g.native
 }
 
-func (g *GSTexture) Pointer() unsafe.Pointer {
-	n := g.toNative()
-	return unsafe.Pointer(n)
-}
-
 func TextureUpload(g GSGlobal, tex GSTexture) {
 	C.gsKit_texture_upload(g.toNative(), tex.toNative())
 }
